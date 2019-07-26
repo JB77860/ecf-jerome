@@ -1,0 +1,31 @@
+App\Entity\Hotel:
+    hotel_1:
+        title: Hotel de la foret
+    hotel_2:
+        title: Hotel de la mer
+    hotel_3:
+        title: Hotel de le montagne
+
+App\Entity\Room:
+    room{1..10}:
+        number: <randomDigitNotNull()>
+        price: <randomFloat(2, 50, 300)>
+        capacity: <randomElement([1, 2])>
+        id_hotel: <randomElement([@hotel_*],3)>
+    room{11..20}:
+        number: <randomDigitNotNull()>
+        price: <randomFloat(2, 50, 300)>
+        capacity: <randomElement([1, 2])>
+        id_hotel: <randomElement([@hotel_*],3)>
+    room{21..30}:
+        number: <randomDigitNotNull()>
+        price: <randomFloat(2, 50, 300)>
+        capacity: <randomElement([1, 2])>
+        id_hotel: <randomElement([@hotel_*],3)>
+
+App\Entity\Customer:
+    customer{1..50}:
+        name: <name()>
+        firstName: <firstName()>
+        email: <email()>
+        phone: <e164PhoneNumber()>

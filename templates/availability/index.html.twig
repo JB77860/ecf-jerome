@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AvailabilityController!{% endblock %}
+
+{% block body %}
+
+    <h2>Sélectionnez un Hôtel et renseignez vos dates pour vérification des disponibilités</h2>
+    <form method="post">
+        <div>
+            <select name="hotel">{% for hotel in hotels %}
+                <option value="{{ hotel.id }}">{{ hotel.title }}</option>
+            {% endfor %}
+            </select>
+
+            <label>Nombre de personnes</label>
+            <select name="nombre">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label>Date de début du séjour</label>
+            <input type="date" name="arrival" value="arrival"></input>
+            <label>Date de fin du séjour</label>
+            <input type="date" name="departure" value="departure"></input>
+        </div>
+
+        <button type="submit">Rechercher</button>
+    </form>
+{% endblock %}

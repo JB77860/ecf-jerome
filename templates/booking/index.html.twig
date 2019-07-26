@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue chez nous!{% endblock %}
+
+{% block body %}
+    <h2>Renseignez vos informations pour procéder à la réservation</h2>
+
+    <form method="post">
+        <div>
+            <input type="text" name="hotel" value="" />
+            <input type="text" name="nombre" value="" />
+            <input type="text" name="arrival" value="" />
+            <input type="text" name="departure" value="" />
+        </div>
+
+        <div>
+            <input type="text" placeholder="Entrez votre nom">
+            <input type="text" placeholder="Entrez votre prénom">
+            <input type="text" placeholder="Entrez votre email">
+            <input type="text" placeholder="Entrez votre numéro de téléphone">
+        </div>
+
+        <button type="submit">Valider</button>
+    </form>
+
+{% endblock %}
